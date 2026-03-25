@@ -29,6 +29,23 @@ header {
 header h1 { font-size: 20px; }
 header .subtitle { font-size: 13px; opacity: 0.85; margin-top: 4px; }
 
+.search-area {
+  padding: 12px 16px;
+  background: #f8fbfd;
+  border-bottom: 1px solid #eee;
+}
+
+.search-area input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 13px;
+  outline: none;
+}
+
+.search-area input:focus { border-color: #4f8ef7; }
+
 #chat-box {
   height: 360px;
   overflow-y: auto;

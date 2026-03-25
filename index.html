@@ -14,6 +14,10 @@
       <input id="search-input" type="text" placeholder="搜尋訊息..." oninput="searchMessages(this.value)">
     </header>
 
+    <div class="search-area">
+      <input id="search-input" type="text" placeholder="搜尋訊息..." oninput="searchMessages()">
+    </div>
+
     <div id="chat-box">
       <div class="message bot">
         嗨！這週我們要學 Pull Request 🔀 試著修改我，然後開一個 PR 吧！
@@ -27,6 +31,19 @@
   </div>
 
   <script>
+    function searchMessages() {
+      const searchTerm = document.getElementById('search-input').value.toLowerCase();
+      const messages = document.querySelectorAll('#chat-box .message');
+      
+      messages.forEach(msg => {
+        if (msg.textContent.toLowerCase().includes(searchTerm)) {
+          msg.style.display = '';
+        } else {
+          msg.style.display = 'none';
+        }
+      });
+    }
+
     function sendMessage() {
       const input = document.getElementById('user-input');
       const chatBox = document.getElementById('chat-box');
